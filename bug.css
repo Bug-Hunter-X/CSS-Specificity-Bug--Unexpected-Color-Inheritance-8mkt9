@@ -1,0 +1,14 @@
+The following CSS code snippet demonstrates an issue where the specificity of selectors might lead to unexpected results:
+
+```css
+div p {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+In this scenario, both selectors target the same element, but `div p` is more specific.  If an element `<p>` is nested within a `<div>`, it will inherit the blue color, overriding the `color: red;` rule.
+
+The issue might not be immediately apparent and can cause unexpected styling inconsistencies, making it an uncommon bug. This is often encountered in large, complex CSS files.
