@@ -1,0 +1,12 @@
+One way to solve this is to adjust the order in which the rules appear.  The rule with higher specificity should appear last, as CSS processes rules sequentially. However, this approach can be brittle as the CSS evolves.  A more robust solution is to add more specificity to the less specific selector to ensure the desired result:
+
+```css
+div p {
+  color: blue;
+}
+p {
+  color: red !important;
+}
+```
+
+Alternatively, you could make the `div p` selector even more specific or use a more descriptive selector to clearly target the specific elements you intend to affect. Using `!important` is generally discouraged unless absolutely necessary for overriding styles, but is demonstrated here for completeness.
